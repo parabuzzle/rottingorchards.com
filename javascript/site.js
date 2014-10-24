@@ -70,7 +70,7 @@ function changeColor() {
       bodyElement.style.backgroundColor = 'transparent';
     }
 
-    if (delay > 400) {
+    if (delay > 1000) {
       delay = 0;
       bodyElement.style.backgroundColor = 'transparent';
     }
