@@ -71,6 +71,7 @@ function changeColor() {
     }
 
     if (delay > 400) {
+      delay = 0;
       bodyElement.style.backgroundColor = 'transparent';
     }
 
