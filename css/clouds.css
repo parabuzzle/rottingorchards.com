@@ -17,7 +17,7 @@
 .cloud {
   z-index: 1;
   width: 200px; height: 60px;
-  background: #a0a0a0;
+  background: #222;
 
   border-radius: 200px;
   -moz-border-radius: 200px;
@@ -29,7 +29,7 @@
 .cloud:before, .cloud:after {
   content: '';
   position: absolute;
-  background: #a0a0a0;
+  background: #222;
   width: 100px; height: 80px;
   position: absolute; top: -15px; left: 10px;
 
