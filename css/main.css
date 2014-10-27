@@ -179,4 +179,32 @@ a:visited { color: #205caa; }
   font-weight: normal;
 }
 
+h1 {
+  font-size:48px;
+  font-weight: bold;
+  border-bottom: 1px solid #666;
+  margin-bottom: 30px;
+}
+
+#press {
+  padding-top:40px;
+  width:700px;
+  margin:auto;
+  text-align:center;
+}
+
+#press ul li {
+  list-style: none;
+  list-style-type: none;
+}
+
+#press .headline {
+  font-weight: bold;
+}
+
+#press .headline a { font-size: 120%}
+#press .headline a:hover {color:#aaa;}
+
+#press a:hover {color:#fff;}
+
 .center { text-align: center;}
