@@ -208,3 +208,8 @@ h1 {
 #press a:hover {color:#fff;}
 
 .center { text-align: center;}
+
+#donation {
+  float:left;
+  padding:10px;
+}
