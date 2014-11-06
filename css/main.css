@@ -147,6 +147,12 @@ a:visited { color: #205caa; }
   text-align: justify;
 }
 
+#summary ul {
+  padding-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
 #tombstone {
   left:26%;
   bottom: -400px;
