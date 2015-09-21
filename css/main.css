@@ -175,10 +175,10 @@ a:visited { color: #205caa; }
   z-index:3;
 }
 
-#content a {color:#FF2200;}
+/*#content a {color:#FF2200;} */
 #content a:hover {color:#fff;}
 
-#summary a {color: #aaa;}
+#summary a {color: #FF2200;}
 
 #map-link {
   font-size:12px;
