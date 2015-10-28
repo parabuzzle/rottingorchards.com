@@ -1,0 +1,9 @@
+.center-text {
+  text-align: center;
+}
+
+#footer {
+  padding:2em;
+  margin:auto;
+  text-align:center;
+}

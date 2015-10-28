@@ -1,97 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Rotting Orchards</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Rotting Orchards is a charity haunted house put on annually by Lisa and Mike Heijmans">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Rotting Orchards</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/social.css">
-    <link rel="stylesheet" href="css/clouds.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
-  <canvas id="tree" width="900" height="600"></canvas>
-  <div id="lightning"></div>
-    <div id="header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Rotting Orchards</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Hours</a></li>
+            <li><a href="#">Location</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Contest</a></li>
+          </ul>
 
-    <div id="clouds">
-      <div id="logo">
-        <div class="cloud x1"></div>
-        <div class="cloud x5"></div>
-        <img width="900px" src="img/logo-trans.png"/>
-        <div class="cloud x2"></div>
-        <div class="cloud x3"></div>
-        <div class="cloud x4"></div>
-        <div class="cloud x5"></div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://www.facebook.com/rottingorchards" target="_blank"><img src="img/social/facebook.png"/></a></li>
+            <li><a href="https://instagram.com/explore/tags/rottingorchards/" target="_blank"><img src="img/social/instagram.png"/></a></li>
+            <li><a href="https://twitter.com/hashtag/rottingorchards" target="_blank"><img src="img/social/twitter.png"/></a></li>
+            <li><br/>#rottingorchards</li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <br/><br/><br/><br/>
+
+    <div class="container">
+      <div class="row">
+        <img src="img/header-white-tagged.svg"/>
+        <br/><br/>
       </div>
 
-    </div>
+      <div class="row">
+        <div class="jumbotron">
+        <h1 class="alert">We've Moved!</h1>
+          <p>
+            Because of landlord disagreements and the general bay area rental market, we've moved to Elk Grove in the Sacramento area! Come check us out at our new (and improved) location!
+        </div>
+      </div>
 
-    <div id="content">
-    <div class="center">
-    <br/><br/>
-      <iframe width="853" height="480" src="http://www.youtube.com/embed/iSPP1I0Dxmc" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div id="summary">
-
-      <h1>We've Moved!</h1>
-      That's right. Because of landlord disagreements and the general rental market in the Bay Area, we have moved to Elk Grove! This year we will be haunting our new house at 9258 Louis St in Elk Grove. We look forward to another awesome year and a whole set of new faces.
-
+      <div class="row center-text">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="http://www.youtube.com/embed/iSPP1I0Dxmc" allowfullscreen></iframe>
+        </div>
+      </div>
       <br/><br/>
-      Watch this space for more info coming soon
-      <br/><br/><br/>
-      <h2>Photos</h2>
-      <ul>
-        <li><a href="https://www.flickr.com/photos/parabuzzle/sets/72157648616327588/show/" target="_blank">Photos from 2014</a></li>
-        <li><a href="https://www.flickr.com/photos/parabuzzle/sets/72157646899857348/show/" target="_blank">Photos from 2013</a></li>
-      </ul>
-      <br/><br/>
-      <h2>Press</h2>
-    <ul>
-      <li>
-        <div class="headline">
-         <a href="http://www.nbcbayarea.com/video/#!/news/local/Halloween-Brings-Big-Business-to-South-Bay/281164902" target="_blank">Halloween Brings Big Business to South Bay</a>
-        </div>
 
-        <div class="link">
-          by the NBC Bay Area News
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">San Jose Mercury News</h3>
+            </div>
+            <div class="panel-body">
+              Lisa and Mike featured in the San Jose Mercury news for 2014's haunted house.
+              <br/><br/>
+              <a href="http://www.mercurynews.com/campbell/ci_26780875/campbell-couples-haunted-house-returns-new-frights" target="_blank">View Article</a>
+            </div>
+          </div>
+
         </div>
-      </li>
-      <li>
-      <div class="headline">
-        <a href="http://www.mercurynews.com/campbell/ci_26780875/campbell-couples-haunted-house-returns-new-frights" target="_blank">Campbell Couple's Haunted House Returns with New Frights</a>
+        <div class="col-md-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">NBC Bay Area News</h3>
+            </div>
+            <div class="panel-body">
+              Featured in bay area local news story about Halloween in the San Jose area
+              <br/><br/>
+              <a href="http://www.nbcbayarea.com/video/#!/news/local/Halloween-Brings-Big-Business-to-South-Bay/281164902" target="_blank">View Video</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
       </div>
 
-      <div class="link">
-        by the San Jose Mercury News
-        </div>
-      </li>
-      </ul>
-    </div>
-    <div class="center">
-      <div id="tix">
+      <div class="row">
+
       </div>
-    </div>
-    <!-- <div id="tombstone"><img src="img/tombstone.png"/></div> -->
-    <div id="press">
-    </div>
-    <br/><br/>
-    <div class="center">
-    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Frottingorchards&amp;width&amp;height=290&amp;colorscheme=dark&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=135570609961857" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:290px;" allowTransparency="true"></iframe>
+
+
     </div>
 
     <div id="footer">
-      Brought to you by Mike and Lisa Heijmans
+    <a href="https://www.facebook.com/rottingorchards" target="_blank"><img src="img/social/facebook.png"/></a>
+    <a href="https://instagram.com/explore/tags/rottingorchards/" target="_blank"><img src="img/social/instagram.png"/></a>
+    <a href="https://twitter.com/hashtag/rottingorchards" target="_blank"><img src="img/social/twitter.png"/></a>
+    <br/><br/>
+    Presented by Mike and Lisa Heijmans
     </div>
 
-  <script src="javascript/site.js"></script>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
-
 </html>
