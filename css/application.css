@@ -12,3 +12,26 @@
   margin:auto;
   text-align:center;
 }
+
+#header {
+  background-image: url("/img/hanger.jpg");
+  background-color: #000000;
+  background-size:100% auto;
+  background-repeat: no-repeat;
+  min-height: 650px;
+  color: #fff;
+  margin-top: 60px;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #888888;
+    background-color: #000;
+}
+
+
+.photo-block {
+  float:left;
+}
