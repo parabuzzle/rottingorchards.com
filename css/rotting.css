@@ -5,8 +5,8 @@
    ========================================================================== */
 
 :root {
-  --void:     #05070A;   /* cold blue-black */
-  --night:    #0A0E13;
+  --void:     #030407;   /* cold blue-black, base */
+  --night:    #06080C;
   --slate:    #10161D;
   --mist:     #2A3742;   /* cold blue-gray */
   --moon:     #C8D2D8;   /* pale moonlight, primary text */
