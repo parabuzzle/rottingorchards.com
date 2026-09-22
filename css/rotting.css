@@ -104,14 +104,16 @@ strong { color: var(--moon); font-weight: 400; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px 32px;
+  padding-top: max(22px, env(safe-area-inset-top));
   transition: background .4s ease, padding .4s ease, border-color .4s ease;
   border-bottom: 1px solid transparent;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .nav.scrolled {
   padding: 12px 32px;
-  background: rgba(5,7,10,.94);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  padding-top: max(12px, env(safe-area-inset-top));
+  background: #000;             /* solid black when pinned (no iOS backdrop-filter leak) */
   border-bottom-color: rgba(42,55,66,.6);
 }
 .nav__brand img { height: 40px; width: auto; opacity: .95; }
