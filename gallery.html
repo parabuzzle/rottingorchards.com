@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Rotting Orchards</title>
+  <meta name="description" content="Photos and video from years of Rotting Orchards, a charity home haunt since 2014.">
+  <link rel="canonical" href="https://www.rottingorchards.com/gallery.html">
+  <link rel="icon" type="image/png" href="img/rotting-orchards-logo-sm.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/rotting.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav scrolled" id="nav">
+    <a class="nav__brand" href="/" aria-label="Rotting Orchards">
+      <img src="img/rotting-orchards-logo-sm.png" alt="Rotting Orchards">
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#feature">IgorBox</a></li>
+      <li><a href="/#tale">The Tale</a></li>
+      <li><a href="/#cause">The Cause</a></li>
+      <li><a class="nav__fb" href="https://www.facebook.com/rottingorchards" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery__head reveal">
+        <span class="eyebrow">Evidence</span>
+        <h2>The Archive</h2>
+        <p class="lede">Everything the orchard has left behind. The full archive is being dug up, so
+        check back as more surfaces.</p>
+      </div>
+
+      <!-- Add tiles by copying a block below; click opens the lightbox.
+           Photo:  <figure class="gtile" data-full="img/BIG.jpg"><img src="img/THUMB.jpg" alt="" loading="lazy"><figcaption>Caption</figcaption></figure>
+           Video:  <figure class="gtile" data-youtube="YT_ID"><img src="https://img.youtube.com/vi/YT_ID/hqdefault.jpg" alt="" loading="lazy"><figcaption>Caption</figcaption></figure>
+           Size classes: g-big (2x2), g-wide (2x1), g-tall (1x2). Placeholder: <div class="gtile g-soon" aria-hidden="true"><span>Surfacing soon</span></div> -->
+      <div class="mosaic reveal">
+        <figure class="gtile g-big" data-youtube="gYrBd3EKdLk">
+          <img src="https://img.youtube.com/vi/gYrBd3EKdLk/hqdefault.jpg" alt="Rotting Orchards film" loading="lazy">
+          <figcaption>Roll the tape</figcaption>
+        </figure>
+        <figure class="gtile g-tall" data-full="img/hanger.jpg">
+          <img src="img/hanger.jpg" alt="A shape in the dark" loading="lazy">
+          <figcaption>Found among the trees</figcaption>
+        </figure>
+        <figure class="gtile g-tall" data-full="img/hanger-blur.jpg">
+          <img src="img/hanger-blur.jpg" alt="It moved when the light found it" loading="lazy">
+          <figcaption>It moved when the light found it</figcaption>
+        </figure>
+
+        <!-- placeholders, swap these out as assets come in -->
+        <div class="gtile g-wide g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+        <div class="gtile g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+        <div class="gtile g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+        <div class="gtile g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+        <div class="gtile g-wide g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+        <div class="gtile g-soon" aria-hidden="true"><span>Surfacing soon</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <img class="footer__logo" src="img/rotting-orchards-logo-sm.png" alt="Rotting Orchards">
+    <div>
+      <a class="footer__fb" href="https://www.facebook.com/rottingorchards" target="_blank" rel="noopener">Follow on Facebook</a>
+    </div>
+    <p class="footer__tag">#rottingorchards</p>
+    <p class="footer__note">
+      A charity home haunt, hand-built at our own home since 2014, raising money for a new cause
+      every season. Rebuilt on <a href="https://www.igorbox.com" target="_blank" rel="noopener">IgorBox</a>.
+    </p>
+    <p class="footer__legal">Copyright &copy; 2026 Rising Orchards, LLC</p>
+  </footer>
+
+  <script src="js/rotting.js"></script>
+</body>
+</html>
