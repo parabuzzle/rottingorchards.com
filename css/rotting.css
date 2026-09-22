@@ -1,0 +1,353 @@
+/* ==========================================================================
+   ROTTING ORCHARDS
+   Cold folk-horror. Moonlit orchard, quiet dread. Photography carries it;
+   type and darkness do the rest. Restraint over decoration.
+   ========================================================================== */
+
+:root {
+  --void:     #05070A;   /* cold blue-black */
+  --night:    #0A0E13;
+  --slate:    #10161D;
+  --mist:     #2A3742;   /* cold blue-gray */
+  --moon:     #C8D2D8;   /* pale moonlight, primary text */
+  --moon-hi:  #EEF3F5;
+  --moon-dim: #7E8A93;
+  --ash:      #59636B;
+  --ember:    #7C2B22;   /* oxidized, restrained blood, used sparingly */
+  --ember-hi: #A23B2C;
+
+  --font-display: "Cinzel", Georgia, "Times New Roman", serif;   /* engraved, ritual */
+  --font-body:    "Spectral", Georgia, serif;                    /* literary, folk-tale */
+
+  --maxw: 1180px;
+  --readw: 720px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--moon);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.85;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* fine film grain, laid faintly over everything */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 200; pointer-events: none;
+  opacity: .04; mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--moon); text-decoration: none; transition: color .25s ease; }
+a:hover { color: var(--moon-hi); }
+::selection { background: var(--ember); color: var(--moon-hi); }
+
+/* ---------- type ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.14;
+  margin: 0 0 .5em;
+  color: var(--moon-hi);
+  letter-spacing: .02em;
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: .42em;
+  font-size: .72rem; font-weight: 600; color: var(--moon-dim);
+  margin-bottom: 26px;
+}
+.eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--ember); opacity: .8; }
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+section { position: relative; padding: 150px 0; }
+
+.lede { font-size: 1.35rem; line-height: 1.7; color: var(--moon); font-weight: 300; }
+p { color: var(--moon-dim); }
+strong { color: var(--moon); font-weight: 400; }
+
+/* hairline divider, like a distant treeline */
+.divider { height: 1px; border: 0; margin: 0; background: linear-gradient(90deg, transparent, var(--mist) 30%, var(--mist) 70%, transparent); opacity: .5; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: .24em;
+  font-size: .78rem; font-weight: 600;
+  padding: 17px 38px;
+  border: 1px solid rgba(200,210,216,.28);
+  color: var(--moon-hi);
+  background: rgba(200,210,216,.02);
+  transition: border-color .3s ease, background .3s ease, letter-spacing .3s ease, color .3s ease;
+}
+.btn:hover { border-color: var(--moon); background: rgba(200,210,216,.07); letter-spacing: .28em; }
+.btn-primary { border-color: rgba(162,59,44,.7); color: var(--moon-hi); }
+.btn-primary:hover { border-color: var(--ember-hi); background: rgba(124,43,34,.18); }
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 32px;
+  transition: background .4s ease, padding .4s ease, border-color .4s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  padding: 12px 32px;
+  background: rgba(5,7,10,.86);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(42,55,66,.6);
+}
+.nav__brand img { height: 40px; width: auto; opacity: .95; }
+.nav__links { display: flex; align-items: center; gap: 34px; list-style: none; margin: 0; padding: 0; }
+.nav__links a {
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .22em; font-size: .72rem; font-weight: 600; color: var(--moon-dim);
+}
+.nav__links a:hover { color: var(--moon-hi); }
+.nav__fb { color: var(--moon) !important; border: 1px solid rgba(200,210,216,.25); padding: 8px 16px; }
+.nav__fb:hover { border-color: var(--moon); }
+.nav__toggle {
+  display: none; background: none; border: 1px solid rgba(200,210,216,.3);
+  color: var(--moon); font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .18em; font-size: .68rem; padding: 9px 14px; cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  position: relative; min-height: 100svh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 150px 26px 120px; overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: url("../img/orchard-night.jpg") center 30% / cover no-repeat;
+  transform: scale(1.06);
+}
+/* cold wash + top/bottom fades so the photo sinks into the page */
+.hero__scrim {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5,7,10,.7) 0%, transparent 26%),
+    linear-gradient(0deg, var(--void) 3%, rgba(5,7,10,.35) 34%, transparent 62%),
+    radial-gradient(ellipse 80% 70% at 50% 40%, transparent 45%, rgba(5,7,10,.72) 100%),
+    linear-gradient(180deg, rgba(12,20,30,.28), rgba(8,12,20,.28));
+}
+.hero > * { position: relative; z-index: 3; }
+.hero__logo {
+  width: min(560px, 82vw); margin: 0 auto;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,.85));
+  animation: fade-up 1.4s ease both;
+}
+.hero__kicker {
+  margin-top: 30px; font-family: var(--font-display);
+  text-transform: uppercase; letter-spacing: .46em; font-size: .74rem; font-weight: 600;
+  color: var(--moon-dim);
+  animation: fade-up 1.4s .15s ease both;
+}
+.hero__kicker span { color: var(--ember-hi); }
+.hero__line {
+  max-width: 620px; margin: 26px auto 0; font-size: 1.28rem; line-height: 1.7;
+  color: var(--moon); font-weight: 300; font-style: italic;
+  animation: fade-up 1.4s .3s ease both;
+}
+.hero__cta { margin-top: 42px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; animation: fade-up 1.4s .45s ease both; }
+.hero__scroll {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3;
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .3em;
+  font-size: .62rem; color: var(--ash); animation: bob 2.6s ease-in-out infinite;
+}
+.hero__scroll::after { content: ""; display: block; width: 1px; height: 34px; margin: 10px auto 0; background: linear-gradient(var(--ash), transparent); }
+
+/* drifting cold fog */
+.fog {
+  position: absolute; inset: -20%; z-index: 2; pointer-events: none; opacity: .5;
+  background:
+    radial-gradient(ellipse 40% 30% at 20% 70%, rgba(120,138,150,.10), transparent 70%),
+    radial-gradient(ellipse 50% 34% at 75% 78%, rgba(120,138,150,.08), transparent 70%);
+  background-size: 200% 200%;
+  animation: drift 40s ease-in-out infinite alternate;
+}
+
+/* ==========================================================================
+   STATEMENT  (a single cinematic breath)
+   ========================================================================== */
+.statement { padding: 170px 0; text-align: center; }
+.statement .container { max-width: 860px; }
+.statement p {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.5rem, 3.6vw, 2.5rem); line-height: 1.4; color: var(--moon-hi);
+  letter-spacing: .01em;
+}
+.statement p .dim { color: var(--ash); }
+
+/* ==========================================================================
+   FEATURE / IGORBOX  (asymmetric split, photo-backed)
+   ========================================================================== */
+.feature { position: relative; overflow: hidden; }
+.feature__bg { position: absolute; inset: 0; z-index: 0; background: url("../img/orchard-dim.jpg") center / cover no-repeat; opacity: .5; }
+.feature__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--void) 30%, rgba(5,7,10,.6) 70%, rgba(5,7,10,.3)); }
+.feature .container { z-index: 2; }
+.feature__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
+.feature h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); }
+.feature h2 .accent { color: var(--moon-dim); font-style: italic; }
+.feature__aside {
+  border-left: 1px solid rgba(42,55,66,.8); padding: 6px 0 6px 44px;
+}
+.feature__aside img { max-width: 230px; margin-bottom: 30px; opacity: .95; filter: drop-shadow(0 8px 26px rgba(0,0,0,.7)); }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li {
+  position: relative; padding: 15px 0 15px 30px; color: var(--moon);
+  border-top: 1px solid rgba(42,55,66,.55); font-size: .98rem; font-weight: 300;
+}
+.list li:first-child { border-top: 0; }
+.list li::before { content: "\2020"; position: absolute; left: 0; top: 15px; color: var(--ember-hi); } /* dagger */
+.feature .btn { margin-top: 36px; }
+
+/* ==========================================================================
+   THE TALE  (timeline, cinematic, sparse)
+   ========================================================================== */
+.tale__head { max-width: var(--readw); }
+.tale__head h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.tale__head .lede { margin-top: 10px; }
+.timeline { margin: 80px auto 0; max-width: 820px; }
+.entry {
+  display: grid; grid-template-columns: 150px 1fr; gap: 40px; align-items: baseline;
+  padding: 34px 0; border-top: 1px solid rgba(42,55,66,.5);
+}
+.entry:first-child { border-top: 0; }
+.entry__year {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.7rem;
+  color: var(--moon-hi); letter-spacing: .04em;
+}
+.entry p { margin: 0; }
+.entry p strong { color: var(--moon); }
+
+/* the keepers */
+.keepers { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 820px; margin: 90px auto 0; }
+.keeper { display: flex; gap: 22px; align-items: flex-start; }
+.keeper img {
+  width: 84px; height: 84px; object-fit: cover; flex: 0 0 auto;
+  border-radius: 50%; filter: grayscale(1) brightness(.85) contrast(1.05);
+  border: 1px solid rgba(42,55,66,.9);
+}
+.keeper h3 { font-size: 1rem; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 6px; color: var(--moon); }
+.keeper p { margin: 0; font-size: .92rem; }
+
+/* ==========================================================================
+   THE CAUSE  (charity, photo-backed, sincere)
+   ========================================================================== */
+.cause { position: relative; text-align: center; overflow: hidden; }
+.cause__bg { position: absolute; inset: 0; z-index: 0; background: url("../img/the-hand.jpg") center 42% / cover no-repeat; opacity: .6; }
+.cause__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 72% 72% at 50% 42%, rgba(5,7,10,.2), rgba(5,7,10,.86) 88%),
+    linear-gradient(180deg, rgba(5,7,10,.6), transparent 24%, transparent 70%, rgba(5,7,10,.82));
+}
+.cause .container { z-index: 2; max-width: 800px; }
+.cause h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); text-shadow: 0 2px 34px rgba(5,7,10,.95), 0 0 10px rgba(5,7,10,.8); }
+.cause .lede, .cause .eyebrow, .cause__grim { text-shadow: 0 1px 18px rgba(5,7,10,.9); }
+.cause .lede { margin: 0 auto; max-width: 640px; }
+.cause__grim { margin-top: 30px; font-family: var(--font-display); font-style: italic; color: var(--moon-dim); font-size: 1.05rem; letter-spacing: .04em; }
+
+/* ==========================================================================
+   GALLERY
+   ========================================================================== */
+.gallery__head { max-width: var(--readw); }
+.gallery__head h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.frame {
+  position: relative; width: 100%; max-width: 960px; margin: 60px 0 48px;
+  aspect-ratio: 16 / 9; border: 1px solid rgba(42,55,66,.9);
+  box-shadow: 0 30px 80px rgba(0,0,0,.7); background: #000;
+}
+.frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.plates { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.plate { position: relative; overflow: hidden; border: 1px solid rgba(42,55,66,.9); }
+.plate img {
+  width: 100%; aspect-ratio: 3 / 2; object-fit: cover;
+  filter: grayscale(.7) brightness(.7) contrast(1.08);
+  transition: filter .6s ease, transform .8s ease;
+}
+.plate:hover img { filter: grayscale(.25) brightness(.92); transform: scale(1.04); }
+.plate figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px;
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .2em;
+  font-size: .64rem; color: var(--moon-dim);
+  background: linear-gradient(0deg, rgba(5,7,10,.9), transparent);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer { text-align: center; padding: 100px 26px 60px; border-top: 1px solid rgba(42,55,66,.5); background: var(--night); }
+.footer__logo { height: 54px; width: auto; margin: 0 auto 30px; opacity: .8; }
+.footer__fb {
+  display: inline-block; font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .24em; font-size: .72rem; color: var(--moon);
+  border: 1px solid rgba(200,210,216,.25); padding: 11px 22px; margin-bottom: 26px;
+}
+.footer__fb:hover { border-color: var(--moon); }
+.footer__tag { font-family: var(--font-display); letter-spacing: .3em; text-transform: uppercase; font-size: .68rem; color: var(--moon-dim); margin-bottom: 16px; }
+.footer__note { color: var(--moon-dim); font-size: .92rem; max-width: 540px; margin: 0 auto 20px; font-weight: 300; }
+.footer__legal { color: var(--ash); font-size: .74rem; font-family: var(--font-display); letter-spacing: .12em; }
+.footer__legal a { color: var(--moon-dim); }
+
+/* ==========================================================================
+   MOTION
+   ========================================================================== */
+@keyframes fade-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes bob     { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,7px); } }
+@keyframes drift   { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 1s ease, transform 1s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+  .hero__bg { transform: none; }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px) {
+  .feature__grid { grid-template-columns: 1fr; gap: 48px; }
+  .feature__aside { border-left: 0; border-top: 1px solid rgba(42,55,66,.8); padding: 40px 0 0; }
+  .keepers { grid-template-columns: 1fr; gap: 36px; max-width: 460px; }
+}
+@media (max-width: 720px) {
+  section { padding: 96px 0; }
+  .statement { padding: 110px 0; }
+  .entry { grid-template-columns: 1fr; gap: 6px; padding: 26px 0; }
+  .plates { grid-template-columns: 1fr; }
+  .nav__toggle { display: block; z-index: 110; }
+  .nav__links {
+    position: fixed; inset: 0 0 0 auto; width: min(82vw, 340px); height: 100vh; z-index: 105;
+    flex-direction: column; align-items: flex-start; justify-content: center; gap: 32px;
+    padding: 48px 40px; background: rgba(5,7,10,.97);
+    border-left: 1px solid rgba(42,55,66,.7);
+    transform: translateX(105%); transition: transform .4s ease;
+  }
+  .nav__links.open { transform: none; }
+  .nav__links a { font-size: .9rem; }
+  .hero__cta { flex-direction: column; width: 100%; max-width: 300px; }
+  .hero__cta .btn { width: 100%; }
+}
