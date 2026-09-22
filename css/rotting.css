@@ -201,22 +201,21 @@ strong { color: var(--moon); font-weight: 400; }
 /* ==========================================================================
    FEATURE / IGORBOX  (asymmetric split, photo-backed)
    ========================================================================== */
-.feature { position: relative; overflow: hidden; text-align: center; }
+.feature { position: relative; overflow: hidden; }
 .feature__bg { position: absolute; inset: 0; z-index: 0; background: url("../img/orchard-dim.jpg") center / cover no-repeat; opacity: .5; }
-.feature__bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(5,7,10,.5), var(--void) 86%); }
+.feature__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--void) 28%, rgba(5,7,10,.55) 72%, rgba(5,7,10,.3)); }
 .feature .container { z-index: 2; }
-.feature__grid { max-width: 760px; margin: 0 auto; }
+.feature__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
 .feature h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); }
-.feature__grid p { max-width: 620px; margin-left: auto; margin-right: auto; }
-.feature__aside { margin-top: 52px; padding-top: 44px; border-top: 1px solid rgba(42,55,66,.8); }
-.feature__aside img { max-width: 220px; margin: 0 auto 28px; opacity: .95; filter: drop-shadow(0 8px 26px rgba(0,0,0,.7)); }
-.list { list-style: none; margin: 0 auto; padding: 0; max-width: 540px; }
+.feature__aside { border-left: 1px solid rgba(42,55,66,.8); padding: 6px 0 6px 48px; }
+.feature__aside img { max-width: 230px; margin-bottom: 30px; opacity: .95; filter: drop-shadow(0 8px 26px rgba(0,0,0,.7)); }
+.list { list-style: none; margin: 0; padding: 0; }
 .list li {
-  padding: 14px 0; color: var(--moon);
+  position: relative; padding: 15px 0 15px 30px; color: var(--moon);
   border-top: 1px solid rgba(42,55,66,.55); font-size: .98rem; font-weight: 300;
 }
 .list li:first-child { border-top: 0; }
-.list li::before { content: "\2020\00a0\00a0"; color: var(--ember-hi); } /* inline dagger */
+.list li::before { content: "\2020"; position: absolute; left: 0; top: 15px; color: var(--ember-hi); } /* dagger */
 .feature .btn { margin-top: 36px; }
 
 /* ==========================================================================
@@ -331,6 +330,8 @@ strong { color: var(--moon); font-weight: 400; }
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 900px) {
+  .feature__grid { grid-template-columns: 1fr; gap: 44px; }
+  .feature__aside { border-left: 0; border-top: 1px solid rgba(42,55,66,.8); padding: 40px 0 0; }
   .keepers { grid-template-columns: 1fr; gap: 40px; max-width: 460px; }
 }
 @media (max-width: 720px) {

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Auto-stamp content-hash versions on CSS/JS when they're part of a commit, so
+# cache-busting is hands-off. Enabled via: git config core.hooksPath .githooks
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+# Only act when a versioned asset is staged.
+staged=$(git diff --cached --name-only)
+if echo "$staged" | grep -qE '^(css/rotting\.css|js/rotting\.js)$'; then
+  if [ -x ./version-assets.sh ]; then
+    ./version-assets.sh
+    # fold the refreshed ?v= stamps into this same commit
+    git add ./*.html
+  else
+    echo "pre-commit: version-assets.sh missing or not executable; skipping stamp" >&2
+  fi
+fi
