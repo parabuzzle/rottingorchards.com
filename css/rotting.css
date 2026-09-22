@@ -35,7 +35,8 @@ body {
   line-height: 1.85;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;   /* clip sideways overflow WITHOUT breaking position:fixed on iOS (hidden does) */
+  /* NOTE: no overflow-x here. overflow-x:hidden/clip on <body> re-anchors
+     position:fixed on iOS Safari (header drifts). Sections clip their own bleed. */
 }
 
 /* fine film grain, laid faintly over everything */
@@ -107,8 +108,6 @@ strong { color: var(--moon); font-weight: 400; }
   padding-top: max(22px, env(safe-area-inset-top));
   transition: background .4s ease, padding .4s ease, border-color .4s ease;
   border-bottom: 1px solid transparent;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 .nav.scrolled {
   padding: 12px 32px;
