@@ -101,14 +101,12 @@ strong { color: var(--moon); font-weight: 400; }
 /* ==========================================================================
    NAV
    ========================================================================== */
-/* sticky (not fixed): iOS 26 Safari drifts fixed headers below the notch and
-   lets content show above them. sticky stays in flow and can't be bypassed.
-   Constant height + env padding fills the safe area; hero is pulled up under it. */
+/* sticky (not fixed) so it can't be bypassed on iOS. No viewport-fit=cover, so
+   Safari reserves the notch itself (fills it with theme-color, keeps content out). */
 .nav {
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  height: calc(74px + env(safe-area-inset-top));
-  padding: env(safe-area-inset-top) 32px 0;
+  height: 80px; padding: 0 32px;
   box-sizing: border-box;
   background: transparent;
   transition: background .4s ease, border-color .4s ease;
@@ -144,7 +142,7 @@ strong { color: var(--moon); font-weight: 400; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 150px 26px 120px; overflow: hidden;
   /* pull up under the sticky nav so the orchard runs full-bleed to the top */
-  margin-top: calc(-74px - env(safe-area-inset-top));
+  margin-top: -80px;
 }
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
